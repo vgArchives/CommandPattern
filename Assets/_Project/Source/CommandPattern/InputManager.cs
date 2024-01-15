@@ -6,17 +6,29 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerOneController;
     [SerializeField] private PlayerController _playerTwoController;
-    [SerializeField] private PlayerIdentifier _currentPlayerIdentifier;
+    [SerializeField] private PlayerIdentifier _initialPlayerIdentifier;
 
     private PlayerController _currentController;
     private Dictionary<PlayerIdentifier, PlayerController> _playerControllerByIdentifier = new Dictionary<PlayerIdentifier, PlayerController>();
 
     protected void Start()
     {
+        PlayerSelectorView.OnPlayerSelected += HandlePlayerSelection;
+
         _playerControllerByIdentifier.Add(PlayerIdentifier.PlayerOne, _playerOneController);
         _playerControllerByIdentifier.Add(PlayerIdentifier.PlayerTwo, _playerTwoController);
 
-         SetCurrentPlayer(_currentPlayerIdentifier);
+         SetCurrentPlayer(_initialPlayerIdentifier);
+    }
+
+    protected void OnDestroy()
+    {
+        PlayerSelectorView.OnPlayerSelected -= HandlePlayerSelection;
+    }
+
+    private void HandlePlayerSelection(PlayerIdentifier playerIdentifier)
+    {
+        SetCurrentPlayer(playerIdentifier);
     }
 
     private void OnMove(InputValue value)
