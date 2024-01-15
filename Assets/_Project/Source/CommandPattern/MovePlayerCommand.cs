@@ -13,11 +13,16 @@ public class MovePlayerCommand : ICommand
 
     public void Execute()
     {
+        Vector3 position = _playerController.transform.position;
+        Vector3 direction = new Vector3(_movementDirection.x, 0f, _movementDirection.y);
+        _playerController.PathMarkerGenerator.AddMarkerToPath(position + direction);
+
         _playerController.Move(_movementDirection);
     }
 
     public void Undo()
     {
+        _playerController.PathMarkerGenerator.RemoveMarkerFromPath();
         _playerController.Move(-_movementDirection);
     }
 }

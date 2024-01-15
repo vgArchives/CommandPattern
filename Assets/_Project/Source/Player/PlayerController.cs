@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private LayerMask _obstacleLayer;
+    [SerializeField] private PathMarkerGenerator _pathMarkerGenerator;
 
     private const float RaycastCheckDistance = 1f;
-
     private Transform _playerTransform;
+
+    public PathMarkerGenerator PathMarkerGenerator => _pathMarkerGenerator;
 
     public void Move(Vector2 direction)
     {
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
         Vector3 currentPosition = _playerTransform.position;
         Vector3 destinationPoint = currentPosition + new Vector3(direction.x, currentPosition.y, direction.y);
         _playerTransform.position = destinationPoint;
+
     }
 
     public bool IsMoveValid(Vector2 direction)
