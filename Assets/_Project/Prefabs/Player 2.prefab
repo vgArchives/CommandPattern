@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 853331950526030755}
   - component: {fileID: 6819203262125035434}
   - component: {fileID: 6542699639639445664}
+  - component: {fileID: 8987938101602397770}
   m_Layer: 10
   m_Name: Player 2
   m_TagString: Untagged
@@ -70,6 +71,25 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
+  _pathMarkerGenerator: {fileID: 8987938101602397770}
+--- !u!114 &8987938101602397770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569828455456182173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2416f8379b417a74d8aefe8a91428157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pathMarkerPrefab: {fileID: 1386052301844049849, guid: f0553e1b75a78c644b717319ad5b65f7,
+    type: 3}
+  _markerOffset: {x: 0, y: 0, z: 0}
+  _pathLineRendererTransform: {fileID: 0}
+  _lineRenderer: {fileID: 0}
+  _markerList: []
 --- !u!1001 &4291071595589494088
 PrefabInstance:
   m_ObjectHideFlags: 0

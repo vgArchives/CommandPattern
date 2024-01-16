@@ -838,12 +838,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 822691185}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &880573819 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6569828455456182173, guid: c7098a5aef8aeab44a3eb2bc961fe791,
-    type: 3}
-  m_PrefabInstance: {fileID: 2633113210744293474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994319045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,24 +2533,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6542699639639445664, guid: c7098a5aef8aeab44a3eb2bc961fe791,
-        type: 3}
-      propertyPath: _pathMarkerGenerator
-      value: 
-      objectReference: {fileID: 4851482711997453723}
     - target: {fileID: 6569828455456182173, guid: c7098a5aef8aeab44a3eb2bc961fe791,
         type: 3}
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8987938101602397770, guid: c7098a5aef8aeab44a3eb2bc961fe791,
+        type: 3}
+      propertyPath: _lineRenderer
+      value: 
+      objectReference: {fileID: 758154546}
+    - target: {fileID: 8987938101602397770, guid: c7098a5aef8aeab44a3eb2bc961fe791,
+        type: 3}
+      propertyPath: _pathLineRendererTransform
+      value: 
+      objectReference: {fileID: 758154545}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6569828455456182173, guid: c7098a5aef8aeab44a3eb2bc961fe791,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4851482711997453723}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7098a5aef8aeab44a3eb2bc961fe791, type: 3}
 --- !u!1001 &4231011521443004442
 PrefabInstance:
@@ -2632,30 +2627,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2633113210744293474}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880573819}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b3b448aaee523b45905e5c97346e4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4851482711997453723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880573819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2416f8379b417a74d8aefe8a91428157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pathMarkerPrefab: {fileID: 1386052301844049849, guid: f0553e1b75a78c644b717319ad5b65f7,
-    type: 3}
-  _markerOffset: {x: 0, y: 0, z: 0}
-  _pathLineRendererTransform: {fileID: 758154545}
-  _lineRenderer: {fileID: 758154546}
-  _markerList: []
 --- !u!114 &5133368589253990255 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8721592432916522622, guid: 724441733ff7ffd49a68b2480b6386a7,

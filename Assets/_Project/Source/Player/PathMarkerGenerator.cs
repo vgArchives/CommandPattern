@@ -5,8 +5,6 @@ using UnityEngine;
 public class PathMarkerGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject _pathMarkerPrefab;
-    [SerializeField] private Vector3 _markerOffset;
-    [SerializeField] private Transform _pathLineRendererTransform;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private List<Vector3> _markerList;
 
@@ -14,10 +12,10 @@ public class PathMarkerGenerator : MonoBehaviour
 
     public void AddMarkerToPath(Vector3 position)
     {
-        GameObject pathMarkerObject = Instantiate(_pathMarkerPrefab, position + _markerOffset, Quaternion.identity);
+        GameObject pathMarkerObject = Instantiate(_pathMarkerPrefab, position, Quaternion.identity);
         _pathObjectStack?.Push(pathMarkerObject);
 
-        pathMarkerObject.transform.parent = _pathLineRendererTransform;
+        pathMarkerObject.transform.parent = _lineRenderer.transform;
 
         _markerList = _pathObjectStack.Select(pathObject => pathObject.transform.position).ToList();
         _lineRenderer.positionCount = _markerList.Count;
